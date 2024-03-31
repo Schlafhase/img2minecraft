@@ -22,4 +22,5 @@
 * Put the datapack in the datapacks folder of your Minecraft world (%appdata%/.minecraft/saves/[YOUR WORLD NAME]/datapacks
 * Reload your World or Join your world if you are not in the world
 * Execute the command `/function image:build` (WARNING: Any blocks in the area where the image will be placed will be REPLACED by the image, so either make a backup or clear the area)
+
 If only parts of the image get generated try executing following command: `/gamerule maxCommandChainLength 999999999`
