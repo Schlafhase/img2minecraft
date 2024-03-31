@@ -72,7 +72,7 @@ im = im[..., ::-1]
 
 commands = mc_imgmosaic.create_mosaic(img=im, images_tuple=mc_images, resolution=res, block_size=16, accuracy=acc, logs=True, saveto="./outputs/preview.png", ground=ground)
 print(f"Using {len(commands)} blocks")
-with open("outputs/debug.txt", "w") as file:
+with open("./outputs/debug.txt", "w") as file:
     file.write(str(commands))
 create_datapack(commands=commands, desc="Image datapack")
 print()
