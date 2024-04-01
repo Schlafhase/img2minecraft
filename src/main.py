@@ -54,7 +54,7 @@ def submit():
     if res < 1 or acc < 2:
         print("Resolution must be at least 1 and Accuracy must be at least 2")
         return
-    print(f"No Shulkers: {bool(no_shulkers.get())}, No Light sources: {bool(no_light_sources.get())}, No gravity blocks: {bool(no_gravity_blocks.get())}, Create ground: {ground}")
+    print(f"No Shulkers: {bool(no_shulkers.get())}, No Light sources: {bool(no_light_sources.get())}, No gravity blocks: {bool(no_gravity_blocks.get())}, Create ground: {ground.get()}")
     print(f"Resolution: {res}, Accuracy: {acc}")
     root.destroy()
 
@@ -75,7 +75,7 @@ mc_images = mc_imgmosaic.create_img_array(images_filepath=mc_filepath, img_size=
 im = cv2.imread(fd.askopenfilename(filetypes=[("Image files", "*.png *.jpg")]))
 im = im[..., ::-1]
 
-commands = mc_imgmosaic.create_mosaic(img=im, images_tuple=mc_images, resolution=res, block_size=16, accuracy=acc, logs=True, saveto="./outputs/preview.png", ground=ground)
+commands = mc_imgmosaic.create_mosaic(img=im, images_tuple=mc_images, resolution=res, block_size=16, accuracy=acc, logs=True, saveto="./outputs/preview.png", ground=ground.get())
 print(f"Using {len(commands)} blocks")
 with open("./outputs/debug.txt", "w") as file:
     file.write(str(commands))
