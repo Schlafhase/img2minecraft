@@ -50,6 +50,8 @@ def submit():
         acc = int(acc_entry.get())
     except:
         return
+    if res < 1 or acc < 2:
+        return
     print(f"Resolution: {res}, Accuracy: {acc}")
     root.destroy()
 
