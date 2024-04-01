@@ -37,21 +37,24 @@ canvas.create_window(200, 60, window=acc_label)
 def submit():
     global res, acc, blacklist
     if no_light_sources.get() == 1:
-        print("No light sources")
+        #print("No light sources")
         blacklist += light_sources
     if no_shulkers.get() == 1:
-        print("No shulkers")
+        #print("No shulkers")
         blacklist += shulkers
     if no_gravity_blocks == 1:
-        print("No gravity blocks")
+        #print("No gravity blocks")
         blacklist += gravity_blocks
     try:
         res = int(res_entry.get())
         acc = int(acc_entry.get())
     except:
+        print("Resolution and Accuracy must be Integers")
         return
     if res < 1 or acc < 2:
+        print("Resolution must be at least 1 and Accuracy must be at least 2")
         return
+    print(f"No Shulkers: {bool(no_shulkers.get())}, No Light sources: {bool(no_light_sources.get())}, No gravity blocks: {bool(no_gravity_blocks.get())}, Create ground: {ground}")
     print(f"Resolution: {res}, Accuracy: {acc}")
     root.destroy()
 
