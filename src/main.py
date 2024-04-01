@@ -77,5 +77,6 @@ with open("./outputs/debug.txt", "w") as file:
 create_datapack(commands=commands, desc="Image datapack")
 print()
 print(f"You're datapack is saved at {os.getcwd()}\image.zip")
+print(f"You can see a preview of the image at {os.getcwd()}\outputs\preview.png")
 print("Put it in the datapacks folder of your Minecraft world and run the following command in your Minecraft world:\n/function image:build")
 input("Press Enter to close")
